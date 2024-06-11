@@ -1,0 +1,128 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="/css/lifepolicy.css">
+<!--    <link rel="stylesheet" href="/css/navbar.css">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<%- include('navbar.ejs') %>
+<h1 class="heading">Life Insurance</h1>
+<div class="into">
+    <h3 class="qno"><strong>What is Life Insurance ?</strong></h3>
+    <div class="introflex">
+        <p class="matter" style="background-color: greenyellow">
+            Life insurance is a type of insurance policy that pays out a lump sum of money to your beneficiaries upon your death.
+            The purpose of life insurance is to provide financial protection to your loved ones and dependents in case you pass away unexpectedly.
+        </p>
+        <img class="introimg" src="/images/life-insurance-word.jpg">
+    </div>
+</div>
+<h2 class="subheading">Types of LIFE Insurances We Offer :</h2>
+<h3 class="qno"><strong>Term Life Insurance</strong></h3>
+<div class="type five" style="border-color: blue">
+    <p class="matter" style="background-color: cornflowerblue">
+        <strong>Term Life Insurance:</strong>Term life insurance is a type of life insurance policy that provides
+        coverage for a specified period or "term," typically ranging from one to thirty years.
+        If the policyholder dies during the term of the policy, the beneficiaries receive a death benefit payout.
+        However, if the policyholder outlives the term, the policy expires, and there is no death benefit payout.
+        Term life insurance is typically less expensive than other types of life insurance policies.
+    </p>
+    <img src="/images/Public health-rafiki.png" class="tlimg">
+</div>
+<h3 class="qno"><strong>Whole Life Insurance</strong></h3>
+<div class="type two" style="border-color: #f44336">
+    <p class="matter" style="background-color: lightcoral">
+        Whole life insurance is a type of permanent life insurance that provides coverage for the lifetime of the policyholder,
+        as long as the premiums are paid. This policy provides coverage for the entire life of the policyholder and includes
+        an investment component,known as the cash value. The cash value of the policy grows tax-deferred and can be accessed
+        by the policyholder in various ways, such as borrowing against it or surrendering the policy for its cash value.
+    </p>
+    <img src="/images/Public health-pana.png" class="whlimg">
+</div>
+
+
+<script>
+
+    // Function to check if an element is in the viewport
+function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to animate policy cards when they come into view
+function animatePolicyCards() {
+    var policyCards = document.querySelectorAll(".cardone");
+    policyCards.forEach(function (card) {
+        if (isInViewport(card)) {
+            card.style.opacity = 1;
+            card.style.transform = "translateY(-100)";
+        }
+    });
+}
+
+// Listen for scroll events and trigger the animation
+window.addEventListener("scroll", animatePolicyCards);
+
+// Initial animation check in case some cards are already in the viewport on page load
+window.addEventListener("load", animatePolicyCards);
+
+</script>
+<script>
+    const observer =new IntersectionObserver((entries) => {
+        entries.forEach((entry)=>{
+            console.log(entry)
+            if (entry.isIntersecting)
+            {
+                entry.target.classList.add('show');
+            }
+            else{
+                entry.target.classList.remove('show');
+            }
+
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el)=> observer.observe(el));
+</script>
+
+<div class="container12">
+    <%for(let i=0;i<array.length;i++){%>
+
+    <div class="card12 show">
+        <div class="item12" style="color: darkblue">
+            <h4 class="sparkle u-hover--sparkle";font-size: x-large;><strong><%=array[i].name%></strong></h4>
+        </div>
+        <div class="item12">
+            <h4>COVER AMOUNT: ₹ <%=array[i].coverAmount %></h4>
+        </div>
+        <div class="item12">
+            <h4>DURATION:<%=array[i].duration %> yrs</h4>
+        </div>
+        <div class="item12">
+
+            <h4>PREMIUM:₹<%=array[i].Premium%></h4>
+        </div>
+        <div class="item12">
+            <h4>TERM:<%=array[i].term%></h4>
+        </div>
+
+
+        <div class="item12">
+            <a href="/buypolicy3/<%= array[i]._id%>"><button class="button">Select</button></a>
+        </div>
+    </div>
+    <%}%>
+</div>
+
+<div>
+    <a href="#nav"><button class="below">Back To Top</button></a>
+</div>
+</body>
+<%-include('footer.ejs')%>
+</html>

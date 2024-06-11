@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/policypage.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
+    <title>Policy Viewing</title>
+</head>
+
+
+<%- include('navbar.ejs') %>
+
+<body>
+    
+    <br>
+    <div class="heading">  <h1>Our Health Insurance Policies:<h2> Protecting Your Health and Finances</h2></h1>
+    </div>
+    <img class='Image1' src='https://thumbs.dreamstime.com/b/health-insurance-concept-big-clipboard-document-under-umbrella-healthcare-finance-medical-service-isolated-148814786.jpg' height="25%" width="23%" style="position:absolute; top:60px; right:5px;">
+    
+    <h2 class="subheads">WHAT IS HEALTH INSURANCE WHICH YOU WANTED TO VIEW?</h2>
+   
+<div class="matterbox2">
+    
+    <div class="disclaimer">
+      <h2>       DISCLAIMER FOR CUSTOMERS
+      </h2>
+    
+      The payable total amount, duration, and premium of a health insurance policy can vary widely depending on several factors, such as your age, health history, location, and the specific plan you choose.
+        You should carefully review the details of each plan you are considering to understand the costs and benefits, as well as any restrictions or limitations. Typically, premiums are paid monthly or annually, and the duration of the policy can range from one year to several years, depending on the plan. The payable total amount will also depend on the specific plan and the amount of coverage provided.</p>
+    </div>
+    <div class="factors">
+    <h2>        FACTORS DETERMINING HEALTH INSURANCE PREMIUM CALCULATION
+    </h2>
+    <div style="text-align: center;">
+<br><br>	<strong>Age:</strong> Generally, older individuals tend to have higher health insurance premiums than younger individuals because they are more likely to have health issues that require medical attention.
+<br><br>	<strong>Gender:</strong> Women may have higher health insurance premiums than men because they tend to use medical services more frequently, especially during their reproductive years.
+<br><br>    <strong>Medical history:</strong> If an individual has a pre-existing medical condition or has a history of serious health issues, they may have higher health insurance premiums.
+<br><br>	<strong>Lifestyle factors:</strong> Health insurance companies may consider an individual's lifestyle factors, such as whether they smoke or drink alcohol, when determining their premiums. Individuals who engage in high-risk behaviors may have higher premiums.
+<br><br>	<strong>Geographic location:</strong> The cost of healthcare can vary depending on the region or state, and health insurance premiums may reflect this.
+<br><br>	<strong>Type of plan:</strong> Different types of health insurance plans, such as HMOs, PPOs, and high-deductible plans, have different premium costs.
+<br><br>	<strong>Deductibles and copayments:</strong> Plans with higher deductibles and copayments typically have lower premiums, while plans with lower deductibles and copayments tend to have higher premiums.
+
+    </div>
+</div>
+
+</div>
+
+<div class="scroll-mobile">
+    <ul class="">
+        <button  class="button button1" onclick="openInfo('Details')">Policy Details</button>
+        <button  class="button button2" onclick="openInfo('T&C')">Policy Terms and Conditions</button>
+        <button  class="button button3" onclick="openInfo('Benefits')">Benefits</button>
+        <button class="button button5" onclick="openInfo('buyPolicy')">Buy Policy</button>
+    </ul>
+</div>
+<div class="content" id="content">
+  <script>
+    
+
+var colour="random"; // "random" can be replaced with any valid colour ie: "red"...
+var sparkles=100;// increase of decrease for number of sparkles falling
+
+var x=ox=400;
+var y=oy=300;
+var swide=800;
+var shigh=600;
+var sleft=sdown=0;
+var tiny=new Array();
+var star=new Array();
+var starv=new Array();
+var starx=new Array();
+var stary=new Array();
+var tinyx=new Array();
+var tinyy=new Array();
+var tinyv=new Array();
+
+colours=new Array('#ff0000','#00ff00','#ffffff','#ff00ff','#ffa500','#ffff00','#00ff00','#ffffff','ff00ff')
+
+n = 10;
+y = 0;
+x = 0;
+n6=(document.getElementById&&!document.all);
+ns=(document.layers);
+ie=(document.all);
+d=(ns||ie)?'document.':'document.getElementById("';
+a=(ns||n6)?'':'all.';
+n6r=(n6)?'")':'';
+s=(ns)?'':'.style';
+
+if (ns){
+	for (i = 0; i < n; i++)
+		document.write('<layer name="dots'+i+'" top=0 left=0 width='+i/2+' height='+i/2+' bgcolor=#ff0000></layer>');
+}
+
+if (ie)
+	document.write('<div id="con" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+
+if (ie||n6){
+	for (i = 0; i < n; i++)
+		document.write('<div id="dots'+i+'" style="position:absolute;top:0px;left:0px;width:'+i/2+'px;height:'+i/2+'px;background:#ff0000;font-size:'+i/2+'"></div>');
+}
+
+if (ie)
+	document.write('</div></div>');
+(ns||n6)?window.captureEvents(Event.MOUSEMOVE):0;
+
+function Mouse(evnt){
+
+	y = (ns||n6)?evnt.pageY+4 - window.pageYOffset:event.y+4;
+	x = (ns||n6)?evnt.pageX+1:event.x+1;
+}
+
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+
+function animate(){
+
+	o=(ns||n6)?window.pageYOffset:0;
+
+	if (ie)con.style.top=document.body.scrollTop + 'px';
+
+	for (i = 0; i < n; i++){
+
+		var temp1 = eval(d+a+"dots"+i+n6r+s);
+
+		randcolours = colours[Math.floor(Math.random()*colours.length)];
+
+		(ns)?temp1.bgColor = randcolours:temp1.background = randcolours; 
+
+		if (i < n-1){
+
+			var temp2 = eval(d+a+"dots"+(i+1)+n6r+s);
+			temp1.top = parseInt(temp2.top) + 'px';
+			temp1.left = parseInt(temp2.left) + 'px';
+
+		} 
+		else{
+
+			temp1.top = y+o + 'px';
+			temp1.left = x + 'px';
+		}
+	}
+
+	setTimeout("animate()",10);
+}
+
+animate();
+
+window.onload=function() { if (document.getElementById) {
+	var i, rats, rlef, rdow;
+	for (var i=0; i<sparkles; i++) {
+		var rats=createDiv(3, 3);
+		rats.style.visibility="hidden";
+		rats.style.zIndex="999";
+		document.body.appendChild(tiny[i]=rats);
+		starv[i]=0;
+		tinyv[i]=0;
+		var rats=createDiv(5, 5);
+		rats.style.backgroundColor="transparent";
+		rats.style.visibility="hidden";
+		rats.style.zIndex="999";
+		var rlef=createDiv(1, 5);
+		var rdow=createDiv(5, 1);
+		rats.appendChild(rlef);
+		rats.appendChild(rdow);
+		rlef.style.top="2px";
+		rlef.style.left="0px";
+		rdow.style.top="0px";
+		rdow.style.left="2px";
+		document.body.appendChild(star[i]=rats);
+	}
+	set_width();
+	sparkle();
+}}
+
+function sparkle() {
+	var c;
+	if (Math.abs(x-ox)>1 || Math.abs(y-oy)>1) {
+		ox=x;
+		oy=y;
+		for (c=0; c<sparkles; c++) if (!starv[c]) {
+			star[c].style.left=(starx[c]=x)+"px";
+			star[c].style.top=(stary[c]=y+1)+"px";
+			star[c].style.clip="rect(0px, 5px, 5px, 0px)";
+			star[c].childNodes[0].style.backgroundColor=star[c].childNodes[1].style.backgroundColor=(colour=="random")?newColour():colour;
+			star[c].style.visibility="visible";
+			starv[c]=50;
+			break;
+		}
+	}
+	for (c=0; c<sparkles; c++) {
+		if (starv[c]) update_star(c);
+		if (tinyv[c]) update_tiny(c);
+	}
+	setTimeout("sparkle()", 40);
+}
+
+function update_star(i) {
+	if (--starv[i]==25) star[i].style.clip="rect(1px, 4px, 4px, 1px)";
+	if (starv[i]) {
+		stary[i]+=1+Math.random()*3;
+		starx[i]+=(i%5-2)/5;
+		if (stary[i]<shigh+sdown) {
+			star[i].style.top=stary[i]+"px";
+			star[i].style.left=starx[i]+"px";
+		}
+		else {
+			star[i].style.visibility="hidden";
+			starv[i]=0;
+			return;
+		}
+	}
+	else {
+		tinyv[i]=50;
+		tiny[i].style.top=(tinyy[i]=stary[i])+"px";
+		tiny[i].style.left=(tinyx[i]=starx[i])+"px";
+		tiny[i].style.width="2px";
+		tiny[i].style.height="2px";
+		tiny[i].style.backgroundColor=star[i].childNodes[0].style.backgroundColor;
+		star[i].style.visibility="hidden";
+		tiny[i].style.visibility="visible"
+	}
+}
+
+function update_tiny(i) {
+	if (--tinyv[i]==25) {
+		tiny[i].style.width="1px";
+		tiny[i].style.height="1px";
+	}
+	if (tinyv[i]) {
+		tinyy[i]+=1+Math.random()*3;
+		tinyx[i]+=(i%5-2)/5;
+		if (tinyy[i]<shigh+sdown) {
+			tiny[i].style.top=tinyy[i]+"px";
+			tiny[i].style.left=tinyx[i]+"px";
+		}
+		else {
+			tiny[i].style.visibility="hidden";
+			tinyv[i]=0;
+			return;
+		}
+	}
+	else tiny[i].style.visibility="hidden";
+}
+
+document.onmousemove=mouse;
+function mouse(e) {
+	if (e) {
+		y=e.pageY;
+		x=e.pageX;
+	}
+	else {
+		set_scroll();
+		y=event.y+sdown;
+		x=event.x+sleft;
+	}
+}
+
+window.onscroll=set_scroll;
+function set_scroll() {
+	if (typeof(self.pageYOffset)=='number') {
+		sdown=self.pageYOffset;
+		sleft=self.pageXOffset;
+	}
+	else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
+		sdown=document.body.scrollTop;
+		sleft=document.body.scrollLeft;
+	}
+	else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
+		sleft=document.documentElement.scrollLeft;
+		sdown=document.documentElement.scrollTop;
+	}
+	else {
+		sdown=0;
+		sleft=0;
+	}
+}
+
+window.onresize=set_width;
+function set_width() {
+	var sw_min=999999;
+	var sh_min=999999;
+	if (document.documentElement && document.documentElement.clientWidth) {
+		if (document.documentElement.clientWidth>0) sw_min=document.documentElement.clientWidth;
+		if (document.documentElement.clientHeight>0) sh_min=document.documentElement.clientHeight;
+	}
+	if (typeof(self.innerWidth)=='number' && self.innerWidth) {
+		if (self.innerWidth>0 && self.innerWidth<sw_min) sw_min=self.innerWidth;
+		if (self.innerHeight>0 && self.innerHeight<sh_min) sh_min=self.innerHeight;
+	}
+	if (document.body.clientWidth) {
+		if (document.body.clientWidth>0 && document.body.clientWidth<sw_min) sw_min=document.body.clientWidth;
+		if (document.body.clientHeight>0 && document.body.clientHeight<sh_min) sh_min=document.body.clientHeight;
+	}
+	if (sw_min==999999 || sh_min==999999) {
+		sw_min=800;
+		sh_min=600;
+	}
+	swide=sw_min;
+	shigh=sh_min;
+}
+
+function createDiv(height, width) {
+	var div=document.createElement("div");
+	div.style.position="absolute";
+	div.style.height=height+"px";
+	div.style.width=width+"px";
+	div.style.overflow="hidden";
+	return (div);
+}
+
+function newColour() {
+	var c=new Array();
+	c[0]=255;
+	c[1]=Math.floor(Math.random()*256);
+	c[2]=Math.floor(Math.random()*(256-c[1]/2));
+	c.sort(function(){return (0.5 - Math.random());});
+	return ("rgb("+c[0]+", "+c[1]+", "+c[2]+")");
+}
+// ]]>
+
+  </script>
+    <div class="Details info" id="Details">
+
+        <div class="detailmatter" id="detailmatter">
+
+            <h3><strong>Policy Name:</strong><%= array.Name %></h3>
+            <h3><strong>Cover Amount:</strong><%= array.Cover %> /-</h3>
+            <h3><strong>Term:</strong><%= array.Term %> Years</h3>
+            <h3><strong>Type of plan:</strong><%= array.Type %></h3>
+        </div>
+        <div class="keyfeatures" id="keyfeatures">
+            <h3> KEY FEATURES 🩺🛡️</h3>
+            <p style="white-space: pre-line"><%= array.keyfeatures %></p>
+         </div>
+    </div>
+    <div class="T&C info" id="T&C" style="display:none">
+        <div class="keyterms" id="keyterms">  
+        <h3>KEY TERMS:</h3>
+
+            <ul>
+                <li>The health premium is guaranteed for a period of 3 years, post
+                    which it may be reviewed.</li>
+                <li>Please know the associated risks and the applicable charges, from
+                    your Insurance agent or the Intermediary or policy document issued
+                    by insurance company</li>
+                <li>Tax Benefits are subject to change as per Income Tax Act, 1961.
+                    Please check with your financial advisor for more details</li>
+            </ul>
+        </div>
+            <p style="text-align: center">**REFER THE BROCHURE FOR ALL TERMS AND CONDITIONS</p>
+            <div class="conditionhead" id="conditionhead">
+                CONDITIONS UNDER WHICH CLAIM IS NOT APPLICABLE:
+            </div>
+            <div class="conditionbody" id="conditionbody">
+            <%= array.TC %>   
+            </div>
+    </div>
+    <div id="Benefits" class="Benefits info" style="display:none">
+        <p></p>
+
+        <nav class="accordion arrows">
+            <header class="box1">
+              <label for="acc-close" class="box-title">Coverages:</label>
+            </header>
+            <input type="radio" name="accordion" id="cb1" />
+            <section class="box">
+              <label class="box-title" for="cb1"><span class="coveragetitle"><%= array.benefits.coverages.nrl.title %></span></label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.coverages.nrl.description %></div>
+            </section>
+            <input type="radio" name="accordion" id="cb2" />
+            <section class="box">
+              <label class="box-title" for="cb2"><span class="coveragetitle">RESTORATION COVER : </span><%= array.benefits.coverages.rc.title %></label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content">
+                <%= array.benefits.coverages.rc.description %>
+                </div>
+            </section>
+            <input type="radio" name="accordion" id="cb3" />
+            <section class="box">
+              <label class="box-title" for="cb3"><span class="coveragetitle">CASHLESS HOSPITALS : </span><%= array.benefits.coverages.ch.title %>+
+                </label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.coverages.ch.description %></div>
+            </section>
+            <input type="radio" name="accordion" id="cb4" />
+            <section class="box">
+              <label class="box-title" for="cb4"><span class="coveragetitle">COPAY : </span><%= array.benefits.coverages.copay.title %>
+                </label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.coverages.copay.description %></div>
+            </section>
+
+            <input type="radio" name="accordion" id="cb5" />
+            <section class="box">
+              <label class="box-title" for="cb5"><span class="coveragetitle">MATERNITY COVER : </span><%= array.benefits.coverages.mc.title %>
+                </label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.coverages.mc.description %></div>
+            </section>
+            <input type="radio" name="accordion" id="cb6" />
+            <section class="box">
+              <label class="box-title" for="cb6"><span class="coveragetitle">PRE-HOSPITALISATION COVERAGE : </span><%= array.benefits.coverages.pre.title %> days ✅
+                </label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.coverages.pre.description %></div>
+            </section>
+
+            <input type="radio" name="accordion" id="cb7" />
+            <section class="box">
+              <label class="box-title" for="cb7"><span class="coveragetitle">PRE-HOSPITALISATION COVERAGE : </span><%= array.benefits.coverages.post.title %> days ✅
+                </label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.coverages.post.description %></div>
+            </section>
+   
+            
+            <input type="radio" name="accordion" id="cb8" />
+            <section class="box">
+              <label class="box-title" for="cb8"><span class="coveragetitle">EXISTING-ILLNESS WAITING PERIOD: </span> <%= array.benefits.coverages.eiwp.title %> Years
+                </label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.coverages.eiwp.description %>               </div>
+            </section>
+        
+            <input type="radio" name="accordion" id="acc-close" />
+          </nav>
+
+        <nav class="accordion arrows">
+            <header class="box2">
+              <label for="acc-close" class="box-title">Benefits</label>
+            </header>
+            <input type="radio" name="accordion" id="cb9" />
+            <section class="box">
+              <label class="box-title" for="cb9"><span class="benefittitle">NO CLAIM BONUS</span>: <%= array.benefits.ben.ncb.title %> Lakh Annually</label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.ben.ncb.description %>.</div>
+            </section>
+
+            <input type="radio" name="accordion" id="cb10" />
+            <section class="box">
+              <label class="box-title" for="cb10"><span class="benefittitle">HOME HOSPITALISATION:</span>:  <%= array.benefits.ben.hh.title %></label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.ben.hh.description %>
+            </div>
+            </section>
+
+            <input type="radio" name="accordion" id="cb11" />
+            <section class="box">
+              <label class="box-title" for="cb11"><span class="benefittitle">AMBULANCE CHARGES:</span>:<%= array.benefits.ben.ac.title %></label>
+              <label class="box-close" for="acc-close"></label>
+              <div class="box-content"><%= array.benefits.ben.ac.description %>
+
+            </div>
+            </section>
+            
+
+            <input type="radio" name="accordion" id="acc-close" />
+        </nav>
+
+        <div class="otherben" id="otherben">
+            <header class="box3">
+                <label class="box-title">Other Benefits</label>
+              </header>
+
+                    <section class="box">
+                    <ul style=" padding: 2vh;">
+                        <li style="padding: 2vh ;"><%= array.benefits.otherben.benefit1 %></li>
+                        
+                      </ul>
+                        
+    </section>
+
+    <section class="box">
+      <ul style=" padding: 2vh;">
+          <li style="padding: 2vh ;"><%= array.benefits.otherben.benefit2 %></li>
+          
+        </ul>
+          
+</section>
+
+    
+        </div>
+
+    </div>
+
+    <div class="buyPolicy info" id="buyPolicy" style="display:none">
+        <a href="/health-form/<%=array._id%>" style="text-align:center"> <h4>Go to application</h4></a>
+    </div>
+</div>
+<a href="./healthpolicies.ejs"><button class="backtohealth" id="backtohealth"> Back to view policies</button></a>
+
+<script>
+    function openInfo(info){
+        var i;
+        var x = document.getElementsByClassName("info");
+        for(i=0;i<x.length;i++){
+            x[i].style.display="none";
+        }
+        document.getElementById(info).style.display="block";
+    }
+</script>
+    
+</body>
+
+
+<%- include('footer.ejs') %>
+</html>

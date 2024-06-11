@@ -1,0 +1,651 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+*,
+body,
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #383d4d #1e1f26;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: clamp(20px, 2.5vw, 36px);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+  text-align: center;
+}
+
+li>img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 3rem;
+}
+
+.animator>ul {
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+.animator>ul>li {
+  position: sticky;
+  left: 0;
+  width: min(50vw, 350px);
+  display: inline-block;
+  text-align: center;
+  background-color:rgba(192,212,250) ;
+  color:royalblue;
+  padding-bottom: 1.5rem;
+  font-size: clamp(18px, 2.5vw, 22px);
+  box-shadow: -10px 0 30px 0 rgba(0, 0, 0, 0.25);
+  margin-left: -4px;
+}
+
+.animator
+{
+
+    margin : 3vh 8vh 100px 100px;
+    padding:5px;
+    background-color: aliceblue;
+    border:2px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Define your color variables */
+:root {
+    --c-border: royalblue;
+    --c-background: #E3E4DB;
+    --c-text: #441151;
+  } 
+
+
+  
+  .sparkle {
+    max-width: 10em;
+    font-size:x-large;
+    color: var(--c-text);
+    margin: auto auto;
+  }
+  
+  .u-hover--sparkle {
+    box-sizing: border-box;
+    position: relative;
+    padding: 0.75em;
+  }
+  
+  .u-hover--sparkle::before,
+  .u-hover--sparkle::after {
+    content: '';
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center;
+  }
+  
+  .u-hover--sparkle::before {
+    border-top: 0.2em solid var(--c-border);
+    border-bottom: 0.2em solid var(--c-border);
+    transform: scale3d(0, 1, 1);
+    transform: scale3d(1, 1, 1);
+    transition: transform 1000ms;
+
+  }
+  
+  .u-hover--sparkle::after {
+    border-left: 0.2em solid var(--c-border);
+    border-right: 0.2em solid var(--c-border);
+    transform: scale3d(1, 0, 1);
+    transform: scale3d(1, 1, 1);
+    transition: transform 1500ms;
+
+  }
+  
+  .u-hover--sparkle:hover::before,
+  .u-hover--sparkle:hover::after {
+  }
+  
+  .u-hover--sparkle:hover {
+    cursor: pointer;
+  }
+
+  .hidden{
+    opacity: 0;
+    filter: blur(0px);
+    transform:translateX(-2%);
+    transition: all 1s;
+
+  }
+
+  .show
+  {
+    opacity: 1;
+    filter:blur(0);
+    transform: translateX(0);
+
+  }
+  .cardone:nth-child(1) {
+    transition-delay: 0ms;
+  }
+  .cardone:nth-child(2) {
+    transition-delay: 200ms;
+  }
+  .cardone:nth-child(3) {
+    transition-delay: 400ms; /* Add 'ms' here */
+  }
+  .cardone:nth-child(4) {
+    transition-delay: 600ms;
+  }
+  
+  
+
+body{
+    background-color: white;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+.viewpol{
+    text-decoration: none;
+    color: white;
+}
+.heading{
+
+    /* min-height: 20px; */
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    margin: auto 5% auto 5%;
+    z-index: -1;
+     font-size: 1.5em;
+
+
+}
+
+.subheads
+{
+margin-left: 100px;
+
+}
+
+.Image1
+{
+    margin-top: 0.2vh;
+    position: relative;
+    width: 45vh;
+    height: 30vh;
+    border-radius: 50vh;
+}
+
+.Image2
+{
+    position: relative; 
+    margin: 20vh 15vh 15vh 15vh;
+    width: 10%;
+   
+}
+
+.img2
+{
+    border-radius: 10vh;
+}
+
+
+.matterbox
+{
+    height: auto;
+    margin: 1vh 10vh 10vh 10vh;
+    background-color:whitesmoke;
+    border:2px solid maroon ;
+    border-radius: 50px;
+    display: flex;
+    
+}
+
+.matter
+{
+    /* width: 75%; */
+    position: relative;
+    /* margin-right: 30px; */
+    margin:100px 100px 75px 100px;
+    font-size: 20px;
+    padding: 1.5%;
+    line-height: 50px;
+    background-color: rgba(255,0,0,0.3);
+    border-radius: 3vh;
+}
+
+
+.needoutline
+{
+    
+    margin: 1vh 10vh 10vh 10vh;
+    background-color: aliceblue;
+    border:2px solid darkblue ;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.need{
+    padding: 1.5%;
+    font-size: 3vh;
+    margin: 10vh 9vh 10vh 5vh;
+    /* color: aliceblue; */
+    line-height: 50px;
+    background-color: rgba(0,100,255,0.2);
+    border-radius: 10px;
+    /* z-index: -1; */
+    border-radius: 5vh;
+}
+
+#HIP1 
+{
+    margin: 2vh 5vh 2vh 1vh;
+    position: relative;
+   
+}
+
+.prereq
+{
+    border-radius: 50px;
+    border-style: solid;
+    border-color: rgb(143, 83, 0);
+    margin: 50px 100px 50px 100px;
+
+}
+
+.prereqhead
+{
+    color:white;
+    border:2px;
+    border-radius: 1000px;
+    background-color:dodgerblue;
+    border-style: ridge;
+    text-align: center;
+    margin: 15px 10px 25px 25px;
+
+}
+
+.prereqbodyleft
+{
+    padding: 4vh;
+    margin:10px 300px 20px 50px;
+    font-size: larger;
+    color: black;
+    line-height: 30px;
+    background-color:rgb(249, 227, 102);
+    border-radius: 10px;
+    /* z-index: -1; */
+    border-radius: 40px;
+
+}
+
+
+.prereqbodyright
+{
+    padding: 4vh;
+    margin:10px 50px 20px 40vh;
+    font-size: larger;
+    line-height: 30px;
+    color: black;
+    background-color: rgb(250, 196, 90) ;
+    border-radius: 10px;
+    /* z-index: -1; */
+    border-radius: 40px;
+
+}
+
+.genesis
+{
+
+    margin : 1vh 8vh 100px 100px;
+    background-color: aliceblue;
+    border:2px solid darkgreen;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.genimage
+{
+    height: 40vh;
+    width:45vh;
+    margin: 5vh 3vh 5vh 5vh;
+    position:relative;
+    border-radius: 10%;
+}
+
+.genesisbody
+{
+    font-size: 2.5vh;
+    margin: 10vh 5vh 10vh 5vh;
+    color:black;
+    border-radius: 6vh;
+    background-color: rgb(176, 254, 176);
+    text-align: center;
+    /* margin: 100px 125px 100px 125px; */
+    padding: 5px;
+
+
+}
+/* 
+.quotehealthcard
+{
+
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    width: 100%;
+    padding: 3vh;
+    margin-left: 850px;
+    background-image: url("/photos/businessman-hold-shield-plus-.jpg");
+    border-radius: 15px;
+
+} */
+.containerone{
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: rgba(192,212,250,0.7);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 87%;
+    margin: auto;
+    /*text-align: center;*/
+
+}
+
+.cardone{
+    border-radius: 20px;
+    border-style: solid;
+    flex: 0 1 23%;
+    border-color: #3E54AC;
+    background-color: white;
+    text-align: center;
+    width:23% ;
+    display: flex;
+    margin: 5vh 5vh 5vh 6.5vh;
+    height: 400px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* opacity: 0;Initially, cards are hidden */
+  /* transform: scale(0.8); Initially, cards are scaled down */
+
+  /* Add transition for smooth animation */
+  /* transition: opacity 0.5s ease, transform 0.5s ease; */
+    /* font: 10px sans-serif; */
+}
+
+.cardone:hover{
+    height: 450px;
+    width: 28%;
+    margin: 2%;box-shadow: 13px 16px 21px 5px rgba(62,84,172,0.84);
+}
+.button{
+    width: 150px;
+    height: 40px;
+    background-color: #3e54ac;
+    border-radius: 100px;
+    border-style: none;
+    color: whitesmoke;
+    font-size: larger;
+
+}
+
+.button:hover{
+    width: 50%;
+    height: 50px;
+}
+
+.card:hover{
+    height: 450px;
+    width: 28%;
+    margin: 2%;
+    box-shadow: 13px 16px 21px 5px rgba(62,84,172,0.84);
+}
+
+.ITEM1{
+    flex:1 1 500px;
+    font-size: 0.8em ;
+    margin:2px;
+    color: d;
+}
+
+.innernav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.genesishead
+{
+    color: #3e54ac;
+    padding: 20px;
+    background-color: aqua;
+    margin:100px 100px 100px 100px;
+    border:10px black;
+}
+
+.below{
+    margin: 30px;
+    border-radius: 40px;
+    background-color: #3E54AC;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-style: none;
+}
+
+.below:hover{
+    width: 200px;
+    height: 50px;
+}
+
+
+
+@media screen and (max-width: 1200px) 
+{
+    .heading .subheads
+    {
+        padding: 5%;
+        min-height: 0.2vh;
+    }
+    .Image1
+    {
+        display: none;
+    }
+    .Image2
+    {
+        display: none;
+    }
+    .matterbox
+    {
+        height: auto;
+        display: block;
+        padding: 1vh;
+        max-width: 88%;
+        margin: auto;
+        display: block;
+        flex-direction:column;
+        /* max-height: 20vh; */
+    }
+    h1{
+        font-size: xxx-large;
+    }
+    h2{
+        font-size: xx-large;
+    }
+  
+    .matter{
+        padding: 4%;
+        margin: 0%;
+        font-size: xx-large;
+ 
+      }
+      .needoutline{
+        height: auto;
+        display: block;
+        padding: 1vh;
+        max-width: 88%;
+        margin: auto;
+        display: block;
+        flex-direction:column;}
+      .need{
+        padding: 4%;
+        margin: 0%;
+        font-size: xx-large;}
+
+      .genimage
+      {
+        margin: 2vh;
+      }
+      .genesis
+      {
+        height: auto;
+        display: block;
+        padding: 1vh;
+        max-width: 88%;
+        margin: auto;
+        display: block;
+        flex-direction:column;
+      }
+      .genimage
+      {
+        justify-content:center;
+        left: 9%;
+        
+      }
+      .genesisbody
+      {
+        padding: 4%;
+        margin: 0%;
+        font-size: xx-large;
+      }
+      
+      .prereq{
+        height: auto;
+        display: block;
+        padding: 1vh;
+        max-width: 88%;
+        margin: auto;
+        display: block;
+        flex-direction:column;
+      }
+
+      .prereqbodyleft,
+      .prereqbodyright{
+        padding: 2%;
+        margin: 2%;
+        font-size: xx-large;
+        line-height: 35px;
+
+      }
+
+     .containerone
+     {
+        /* display: block;
+        flex-direction: column;
+        margin: 2%; */
+        justify-content: space-evenly;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px; /* Adjust the gap between cards as needed */
+        margin-top: 100vh; /* Push cards below the viewport initially */
+     }
+     .cardone
+     {
+        opacity: 0; /* Initially hidden */
+        transform: translateY(20px); /* Move cards down slightly */
+        transition: opacity 0.5s, transform 0.5s;
+    
+        flex: 0 0 80%;
+      }
+
+     .cardone:hover
+     {
+      display: none;
+     }
+
+     .below{
+        display: none;
+     }
+     .img2{
+        display: none;
+     }
+}
+
+@media screen and (max-width:500px){
+    
+    body,p,h2,h1{
+        font-size: small;
+        line-height: 15px;
+    }
+    .subheads{
+        font-size: large;
+        text-align: center;
+        margin: 0;
+    }
+    .genimage{display: none;
+    }
+    .matter{
+        border-radius: 15%;
+    }
+    
+}
+/* Styles for the policy cards container */
+.policy-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between cards as needed */
+    margin-top: 100vh; /* Push cards below the viewport initially */
+}
+
+/* Styles for the policy card */
+.policy-card {
+    width: 200px; /* Adjust the card width as needed */
+    height: 200px; /* Adjust the card height as needed */
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    line-height: 200px; /* Center content vertically */
+    font-size: 24px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Move cards down slightly */
+    transition: opacity 0.5s, transform 0.5s;
+}

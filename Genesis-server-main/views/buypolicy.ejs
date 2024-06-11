@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="/css/buypolicy.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<%- include('navbar.ejs') %>
+<div class="scroll-mobile">
+    <ul class="switchnav">
+        <button  class="button button1" onclick="openInfo('Details')">Policy Details</button>
+        <button  class="button button2" onclick="openInfo('T&C')">Policy Terms and Conditions</button>
+        <button class="button button4" onclick="openInfo('GeneralException')">General Exceptions</button>
+        <button  class="button button3" onclick="openInfo('Benefits')">Benefits</button>
+        <button class="button button5" onclick="openInfo('buyPolicy')">Buy Policy</button>
+    </ul>
+</div>
+
+<!-- <div class="loading-page">
+    <h2 class="loading-text">Loading...</h2>
+  </div>
+  <script>
+        
+    // Function to show the loading animation
+  function showLoadingAnimation() {
+  var loadingPage = document.querySelector(".loading-page");
+  if (loadingPage) {
+      loadingPage.style.display = "flex";
+  }
+  }
+  
+  // Function to hide the loading animation
+  function hideLoadingAnimation() {
+  var loadingPage = document.querySelector(".loading-page");
+  if (loadingPage) {
+      loadingPage.style.display = "none";
+  }
+  }
+  
+  // Show the loading animation when the page is reloaded
+  window.addEventListener("beforeunload", function () {
+  showLoadingAnimation();
+  });
+  
+  // Display a loading overlay or animation
+  //showLoadingAnimation();
+  
+  // Delay the page unload for a specific amount of time (e.g., 3 seconds)
+  setTimeout(function () {
+  // Remove the loading overlay or animation
+  hideLoadingAnimation();
+  
+  // Allow the page to unload
+  window.removeEventListener("beforeunload", beforeUnloadHandler);
+  },500); // 3000 milliseconds (3 seconds)
+  
+  // Hide the loading animation after the page is fully loaded
+  //window.addEventListener("load", function () {
+  // hideLoadingAnimation();
+  //});
+  
+  
+    </script> -->
+  
+<div class="content" id="content">
+    <div class="Details info" id="Details">
+        <div class="info1">
+           <h3> Type of policy :<%= arr.name %></h3>
+           <h3> IDV : ₹ <%= arr.amount %></h3>
+           <h3> Term : <%= arr.term %></h3>
+
+        </div>
+       <div class="info2" >
+          <p style="white-space: pre-line"> <%= arr.details %></p>
+       </div>
+    </div>
+    <div class="T&C info" id="T&C" style="display:none">
+        <h3 style="text-align: center"> <strong>Terms and Conditions</strong></h3>
+        <p style="white-space: pre-line"> <%= arr.TC %> </p>
+    </div>
+    <div id="Benefits" class="Benefits info" style="display:none">
+        <h3 style="text-align: center"><strong>Benefits</strong></h3>
+
+        <p style="white-space: pre-line"><%= arr.benefits%></p>
+
+    </div>
+    <div class="GeneralException info" id="GeneralException" style="display: none">
+        <h3 style="text-align: center"><strong>General Exceptions</strong></h3>
+       <p style="white-space: pre-line"> <%= arr.GE%></p>
+
+    </div>
+
+    <div class="buyPolicy info" id="buyPolicy" style="display:none">
+        <a href="/transport-form/<%=arr._id%>" style="text-align:center;" onclick="showLoadingAnimation()"><h5>Final Payment Page</h5></a>
+    </div>
+</div>
+
+<%- include('footer.ejs') %>
+
+</body>
+<script>
+    function openInfo(info){
+        var i;
+        var x = document.getElementsByClassName("info");
+        for(i=0;i<x.length;i++){
+            x[i].style.display="none";
+        }
+        document.getElementById(info).style.display="block";
+    }
+</script>
+</html>
+
